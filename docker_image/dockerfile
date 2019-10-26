@@ -12,3 +12,7 @@ COPY requirements.txt /tmp/requirements.txt
 
 # Install requirements.txt
 RUN conda install --file /tmp/requirements.txt
+
+RUN jupyter contrib nbextension install --user
+RUN jupyter nbextension enable toc2/main
+
