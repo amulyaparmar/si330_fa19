@@ -1,10 +1,14 @@
-FROM 984027468541.dkr.ecr.us-east-1.amazonaws.com/mads-notebook:latest
+FROM jupyter/scipy-notebook:latest
 
 # Run any root commands here
 USER root
 RUN apt-get update
 RUN apt install postgresql postgresql-contrib --yes
 RUN psql --version  
+
+RUB pip install jupyterlab_sql
+RUN jupyter serverextension enable jupyterlab_sql --py --sys-prefix
+RUN jupyter lab build
 
 # Run any NB_USER commands here
 USER $NB_USER

@@ -14,4 +14,4 @@ python-fitparse
 seaborn
 dask
 jupyter_contrib_nbextensions
-
+jupyterlab
